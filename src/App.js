@@ -1,6 +1,6 @@
 import './App.css';
-import React, { useEffect, useRef, useState } from 'react';
-import Mux from '@mux/mux-node';
+import React from 'react';
+
 import VideoPlayer from './components/VideoPlayer';
 import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -24,6 +24,7 @@ function App() {
 						{/* <PrivateRoute path="/update-profile" component={UpdateProfile} /> */}
 						<Route path="/signup" component={SignUp} />
 						<Route path="/login" component={Login} />
+						<Route path="/video-player" component={VideoPlayer} />
 
 						{/* <Route path="/forgot-password" component={ForgotPassword} /> */}
 					</Switch>

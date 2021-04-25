@@ -33,8 +33,9 @@ const VideoPlayer = () => {
 
 	const getDownload = async () => {
 		const res = await fetch(`https://api.mux.com/video/v1/assets`);
+		setDownloadVid(res);
 		// const data = await res.json();
-		console.log(res);
+		console.log(res, downloadVid);
 	};
 	return (
 		<>

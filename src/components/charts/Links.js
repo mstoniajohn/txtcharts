@@ -13,7 +13,7 @@ const Links = () => {
 	const collectionRef = projectFirestore.collection('links');
 
 	const { docs } = useFirestore('links');
-	const { currentUser, logout } = useAuth();
+	const { currentUser } = useAuth();
 	console.log(docs);
 	const onChange = (e) => {
 		setCharts({ ...charts, [e.target.name]: e.target.value });
