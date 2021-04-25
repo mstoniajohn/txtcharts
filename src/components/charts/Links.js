@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import useFirestore from '../../hooks/useFirestore';
 import { useAuth } from '../../contexts/AuthContext';
 import { projectFirestore, timestamp } from '../../firebase';
+import LinkItem from './LinkItem';
 const Links = () => {
+	const { currentUser } = useAuth();
+
 	const [error, setError] = useState('');
 	const [charts, setCharts] = useState({
 		chart: '',
@@ -13,7 +16,6 @@ const Links = () => {
 	const collectionRef = projectFirestore.collection('links');
 
 	const { docs } = useFirestore('links');
-	const { currentUser } = useAuth();
 	console.log(docs);
 	const onChange = (e) => {
 		setCharts({ ...charts, [e.target.name]: e.target.value });
@@ -74,20 +76,7 @@ const Links = () => {
 				</form>
 				<div>
 					{docs &&
-						docs.map((doc) => (
-							<div className="card" key={doc.id}>
-								<p>
-									<a href={doc.charts.url}>{doc.charts.chart}</a> | Time:{' '}
-									{doc.charts.time}
-								</p>
-
-								<small>
-									{' '}
-									URL:
-									<a href={doc.charts.url}>{doc.charts.url}</a>
-								</small>
-							</div>
-						))}
+						docs.map((doc) => <LinkItem key={doc.id} doc={doc} id={doc.id} />)}
 				</div>
 			</div>
 		</div>
