@@ -9,12 +9,14 @@ import SignUp from './components/SignUp';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
 import Links from './components/charts/Links';
+import Navbar from './components/layout/Navbar';
 
 function App() {
 	return (
 		<div className="App">
 			<Router>
 				<AuthProvider>
+					<Navbar />
 					<Switch>
 						<PrivateRoute exact path="/" component={Home} />
 						<PrivateRoute exact path="/links" component={Links} />

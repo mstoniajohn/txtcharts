@@ -76,12 +76,14 @@ const Links = () => {
 					{docs &&
 						docs.map((doc) => (
 							<div className="card" key={doc.id}>
-								<p>Chart: {doc.charts.chart}</p>
-								<p>Time: {doc.charts.time}</p>
 								<p>
-									Url: <a href={doc.charts.url}>{doc.charts.chart}</a>
+									<a href={doc.charts.url}>{doc.charts.chart}</a> | Time:{' '}
+									{doc.charts.time}
 								</p>
+
 								<small>
+									{' '}
+									URL:
 									<a href={doc.charts.url}>{doc.charts.url}</a>
 								</small>
 							</div>
