@@ -16,7 +16,6 @@ const Navbar = ({ title, icon }) => {
 	};
 	const authLinks = (
 		<>
-			<li>Hello {currentUser && currentUser.email}</li>
 			<li>
 				<a onClick={onLogout} href="#!">
 					<i className="fas fa-sign-out-alt">
@@ -51,6 +50,7 @@ const Navbar = ({ title, icon }) => {
 						<i className={icon} /> {title}
 					</Link>
 				</h1>
+				<small>Hello {currentUser && currentUser.email}</small>
 
 				<ul>{currentUser ? authLinks : guestLinks}</ul>
 			</div>
