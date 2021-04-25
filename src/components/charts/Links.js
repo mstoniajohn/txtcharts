@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import useFirestore from '../../hooks/useFirestore';
-import { useAuth } from '../../contexts/AuthContext';
+// import { useAuth } from '../../contexts/AuthContext';
 import { projectFirestore, timestamp } from '../../firebase';
 import LinkItem from './LinkItem';
 const Links = () => {
-	const { currentUser } = useAuth();
+	// const { currentUser } = useAuth();
 
 	const [error, setError] = useState('');
 	const [charts, setCharts] = useState({
@@ -39,10 +39,7 @@ const Links = () => {
 
 	return (
 		<div className="p-1">
-			<h1 className="mt-1 text-center p-1">
-				{' '}
-				Charts links {currentUser.email}
-			</h1>
+			<h1 className="mt-1 text-center p-1"> Charts links</h1>
 
 			<div className="grid-2">
 				{/* <h1>{currentUser}</h1> */}
