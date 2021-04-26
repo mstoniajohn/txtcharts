@@ -5,6 +5,7 @@ import { projectFirestore, timestamp } from '../../firebase';
 // import LinkItem from './LinkItem';
 const LinkForm = () => {
 	const { currentUser } = useAuth();
+	console.log(currentUser);
 
 	const [error, setError] = useState('');
 	const [charts, setCharts] = useState({
@@ -31,6 +32,7 @@ const LinkForm = () => {
 				time: '',
 				url: '',
 			});
+			console.log(charts);
 		} catch (error) {
 			console.error(error);
 			setError(error.message);
