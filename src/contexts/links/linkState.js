@@ -87,8 +87,8 @@ const UrlState = (props) => {
 	};
 
 	// Set current contact
-	const setCurrent = (url) => {
-		dispatch({ type: SET_CURRENT, payload: url });
+	const setCurrent = (doc) => {
+		dispatch({ type: SET_CURRENT, payload: doc.id });
 	};
 
 	// Clear Current Contact
